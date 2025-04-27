@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>नेपाली पात्रो २०८२</title>
+    <title>नेपाली पात्रो २०८२ - सम्पूर्ण नेपाली क्यालेन्डर</title>
+    <meta name="description" content="२०८२ सालको सम्पूर्ण नेपाली पात्रो, चाडपर्व, तिथि र अंग्रेजी मिति सहित">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
@@ -155,10 +156,73 @@
             // English months mapping
             const englishMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-            // Festival data
+            // Festival data - Updated with all requested festivals
             const festivals = {
-                5: { 6: 'घटस्थापना', 13: 'फुलपाती', 14: 'महाष्टमी', 15: 'महानवमी', 16: 'विजया दशमी' },
-                6: { 2: 'काग तिहार', 3: 'लक्ष्मी पुजा', 4: 'गाईतिहार', 5: 'गोवर्द्धन पुजा', 6: 'भाई टीका', 10: 'छठ पर्व' }
+                0: { // बैशाख
+                    14: 'आमाको मुख हेर्ने दिन',
+                    18: 'श्रमिक दिवस',
+                    29: 'बुद्ध जयन्ती'
+                },
+                1: { // जेठ
+                    15: 'गणतन्त्र दिवस'
+                },
+                2: { // असार
+                    26: 'गुरु पूर्णिमा'
+                },
+                3: { // साउन
+                    13: 'नाग पञ्चमी',
+                    24: 'रक्षाबन्धन',
+                    25: 'गाईजात्रा',
+                    31: 'श्री कृष्णाष्टमी'
+                },
+                4: { // भदौ
+                    7: 'पिता सम्मान दिवस',
+                    10: 'तीजको ब्रत',
+                    12: 'ऋषिपञ्चमी ब्रत',
+                    15: 'गौरा पर्व',
+                    23: 'शिक्षा दिवस',
+                    29: 'बाल दिवस'
+                },
+                5: { // आश्विन
+                    6: 'घटस्थापना',
+                    13: 'फुलपाती',
+                    14: 'महाष्टमी',
+                    15: 'महानवमी',
+                    16: 'विजया दशमी'
+                },
+                6: { // कार्तिक
+                    2: 'काग तिहार',
+                    3: 'लक्ष्मी पुजा',
+                    4: 'गाईतिहार',
+                    5: 'गोवर्द्धन पुजा',
+                    6: 'भाई टीका',
+                    10: 'छठ पर्व'
+                },
+                7: { // मंसिर
+                    9: 'बिबाह पञ्चमी',
+                    18: 'उधौली पर्व'
+                },
+                8: { // पुष
+                    10: 'क्रिसमस दिवस',
+                    15: 'तमु ल्होसार',
+                    27: 'एकता दिवस (पृथ्वी जयन्ती)'
+                },
+                9: { // माघ
+                    5: 'सोनाम ल्होसार',
+                    9: 'सरस्वती जयन्ती',
+                    16: 'शहीद दिवस'
+                },
+                10: { // फागुन
+                    3: 'महाशिवरात्री',
+                    6: 'ग्याल्पो ल्होसार',
+                    7: 'प्रजातन्त्र दिवस',
+                    18: 'फागु पर्व',
+                    19: 'होली पर्व (तराईम बिदा)',
+                    24: 'नारी दिवस'
+                },
+                11: { // चैत्र
+                    4: 'घोडेजात्रा'
+                }
             };
 
             // Day mapping
@@ -209,7 +273,6 @@
             // Update calendar display
             function updateCalendar() {
                 const currentMonth = nepaliMonths[currentMonthIndex];
-                // Convert year to Nepali numerals
                 const nepaliYear = convertToNepaliNumber(currentMonth.year);
                 document.getElementById('month-year').textContent = `${currentMonth.name} ${nepaliYear}`;
                 
